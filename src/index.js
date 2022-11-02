@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
+const os = require('os')
 
 
 const data = {
@@ -8,7 +9,9 @@ const data = {
     age : 33
 }
 
-app.get('/', (req,res)=> res.status(200).send('hello nginx. ... .........'))
+app.get('/', (req,res)=>{
+    res.status(200).send('hello nginx. ... .........')
+})
   
 
 app.get('/app', (req,res)=> res.status(200).send(data))
